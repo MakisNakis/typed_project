@@ -1,0 +1,25 @@
+{
+    "printWidth": 120,
+    "parser": "babel",
+    "semi": false,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "endOfLine": "auto",
+    "overrides": [
+        {
+            "files": [".prettierrc", ".eslintrc", "package.json", "jsconfig.json"],
+            "options": {
+                "parser": "json",
+                "tabWidth": 4
+            }
+        },
+        {
+            "files": ["*.js", "*.ts"],
+            "options": {
+                "insertPragma": false,
+                "quoteProps": "consistent",
+                "arrowParens": "avoid"
+            }
+        }
+    ]
+}
