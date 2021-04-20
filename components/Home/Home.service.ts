@@ -1,2 +1,2 @@
-export const Fetcher = () => {}
-export const Logger = () => {}
+export class Fetcher {}
+export class Logger {}
