@@ -1,12 +1,18 @@
 import { action, makeAutoObservable } from 'mobx'
-import { IVersion } from '../../types/IVersion'
+import { genID } from '../../lib'
+import { IField } from '../../types/entities/IField'
+import { IVersion } from '../../types/entities/IVersion'
 
-const genVersionID = () => {
-    return `version${new Date().getTime()}${Math.random()}`
+export const addActiveVersion = (field: IField, id: string) => {
+    field.setActiveVersions([...field.activeVersions, id])
+}
+
+export const deleteActiveVersion = (field: IField, id: string) => {
+    field.setActiveVersions([...field.activeVersions.filter(activeId => activeId !== id)])
 }
 
 class Version implements IVersion {
-    id: string = genVersionID()
+    id: string = genID()
     name: string = 'new version'
     color: string = 'gray'
 

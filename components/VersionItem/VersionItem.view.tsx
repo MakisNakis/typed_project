@@ -1,8 +1,12 @@
 import { observer } from 'mobx-react'
-import { IVersionWithColor } from '../../types/IVersion'
+import { IField } from '../../types/entities/IField'
+import { IVersionWithColor } from '../../types/entities/IVersion'
+
+import { addActiveVersion, deleteActiveVersion } from './VersionItem.storage'
 
 interface Props {
     version: IVersionWithColor;
+    field: IField;
 }
 
 const generateRandomColor = () => {
@@ -14,13 +18,15 @@ const generateRandomColor = () => {
     return color
 }
 
-const VersionItem = ({ version }: Props) => {
+const VersionItem = ({ version, field }: Props) => {
     const selectActiveVersion = (checked: boolean) => {
         let color: string = 'gray'
         if (checked) {
             color = generateRandomColor()
+            addActiveVersion(field, version.id)
+        } else {
+            deleteActiveVersion(field, version.id)
         }
-        console.log(color)
         version.setColor(color)
     }
 
@@ -44,7 +50,8 @@ const VersionItem = ({ version }: Props) => {
             {version.color && (
                 <span style={{ backgroundColor: version.color, padding: '0.25rem', marginRight: '0.5rem' }}></span>
             )}
-            <span>{version.name}</span>
+            {/* <span style={{ marginRight: '0.5rem' }}>{version.name}</span> */}
+            <span>{version.id}</span>
         </div>
     )
 }
