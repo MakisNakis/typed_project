@@ -3,8 +3,8 @@ import { observer } from 'mobx-react'
 import { IField } from '../../types/entities/IField'
 import { VersionsArray } from '../../types/entities/IVersion'
 
-import Field from './Home.storage'
-import Version from '../VersionItem/VersionItem.storage'
+import Field from './Home.container'
+import Version from '../VersionItem/VersionItem.container'
 
 import VersionItem from '../VersionItem'
 

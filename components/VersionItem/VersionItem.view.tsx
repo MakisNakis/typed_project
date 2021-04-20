@@ -2,7 +2,7 @@ import { observer } from 'mobx-react'
 import { IField } from '../../types/entities/IField'
 import { IVersionWithColor } from '../../types/entities/IVersion'
 
-import { addActiveVersion, deleteActiveVersion } from './VersionItem.storage'
+import { addActiveVersion, deleteActiveVersion } from './VersionItem.container'
 
 interface Props {
     version: IVersionWithColor;
