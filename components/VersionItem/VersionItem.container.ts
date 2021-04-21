@@ -12,9 +12,9 @@ export const deleteActiveVersion = (field: IField, id: string) => {
 }
 
 class Version implements IVersion {
-    id: string = genID()
-    name: string = 'new version'
-    color: string = 'gray'
+    id = genID()
+    name = 'new version'
+    color = 'gray'
 
     constructor(name: string, color: string = 'gray') {
         this.name = name

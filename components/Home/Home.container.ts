@@ -4,10 +4,10 @@ import { IField } from '../../types/entities/IField'
 import { Fetcher, Logger } from './Home.service'
 
 class Field implements IField {
-    id: string = genID()
-    name: string = ''
-    activeVersions: string[] = []
-    services: object = {
+    id = genID()
+    name = ''
+    activeVersions = []
+    services = {
         fetcher: new Fetcher(),
         logger: new Logger(),
     }
