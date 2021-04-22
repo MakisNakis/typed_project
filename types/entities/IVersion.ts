@@ -1,10 +1,11 @@
 export interface IVersion {
     readonly id: string,
     name: string,
+    // color?: string,
     setColor: (value: string) => void
 }
 
-export interface IVersionWithColor extends IVersion{
+export interface IVersionWithColor extends IVersion {
     color: string,
 }
 

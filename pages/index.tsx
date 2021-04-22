@@ -16,7 +16,9 @@ export default function HomePage() {
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
                 </h1>
 
-                <Home />
+                <div style={{ width: '100%' }}>
+                    <Home />
+                </div>
             </main>
         </div>
     )

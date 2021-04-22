@@ -1,6 +1,7 @@
-import { IService } from "../IService";
+// import { IService } from "../IService";
 
-export interface IField extends IService{
+// export interface IField extends IService {
+export interface IField {
     readonly id: string,
     name: string,
     activeVersions: string[],
