@@ -3,14 +3,6 @@ import { genID } from '../../lib'
 import { IField } from '../../types/entities/IField'
 import { IVersion } from '../../types/entities/IVersion'
 
-export const addActiveVersion = (field: IField, id: string) => {
-    field.setActiveVersions([...field.activeVersions, id])
-}
-
-export const deleteActiveVersion = (field: IField, id: string) => {
-    field.setActiveVersions([...field.activeVersions.filter(activeId => activeId !== id)])
-}
-
 class Version implements IVersion {
     id = genID()
     name = 'new version'

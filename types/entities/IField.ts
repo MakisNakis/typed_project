@@ -9,5 +9,6 @@ export interface IField {
 }
 
 export interface IFieldForActiveVersions extends IField {
-    addActiveVersions: (id: string) => void
+    addActiveVersion: (id: string) => void
+    deleteActiveVersion: (id: string) => void
 }

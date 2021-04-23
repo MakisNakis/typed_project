@@ -1,12 +1,11 @@
 import { action, makeAutoObservable } from "mobx"
-import { userInfo } from "node:os";
 // import { Fetcher, Logger } from "../components/Home/Home.service"
 import { genID } from "../lib"
-import { IField } from "../types/entities/IField"
+import { IFieldForActiveVersions } from "../types/entities/IField"
 
-let instance: IField = null
+let instance: IFieldForActiveVersions = null
 
-export class Field implements IField {
+export class Field implements IFieldForActiveVersions {
     id = genID()
     name = ''
     activeVersions = []
@@ -25,11 +24,19 @@ export class Field implements IField {
         return instance
     }
 
-    @action
     setActiveVersions(versions: string[]): void {
         this.activeVersions = [...versions]
     }
 
+    @action
+    addActiveVersion(id: string):void {
+        this.setActiveVersions([...this.activeVersions, id])
+    }
+
+    @action
+    deleteActiveVersion(id: string):void {
+        this.setActiveVersions([...this.activeVersions.filter(activeId => activeId !== id)])
+    }
     // private async loadActiveVersions() {
     //     // this.activeVersions = await this.services.fetcher('/dsaf').json()
     // }
