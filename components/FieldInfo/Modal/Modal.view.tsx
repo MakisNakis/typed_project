@@ -11,7 +11,7 @@ const Modal = () => {
             <span>{field.name}</span>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {field.activeVersions.map((activeId) => (
-                    <span>{activeId}</span>
+                    <span key={`v${activeId}`}>{activeId}</span>
                 ))}
             </div>
         </div>
